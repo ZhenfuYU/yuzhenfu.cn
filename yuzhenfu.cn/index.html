@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!-- 
+Theme by Mashiro
+                      /^--^\     /^--^\     /^--^\
+                      \____/     \____/     \____/
+                     /      \   /      \   /      \
+                    |        | |        | |        |
+                     \__  __/   \__  __/   \__  __/
+|^|^|^|^|^|^|^|^|^|^|^|^\ \^|^|^|^/ /^|^|^|^|^\ \^|^|^|^|^|^|^|^|^|^|^|^|
+| | | | | | | | | | | | |\ \| | |/ /| | | | | | \ \ | | | | | | | | | | |
+########################/ /######\ \###########/ /#######################
+| | | | | | | | | | | | \/| | | | \/| | | | | |\/ | | | | | | | | | | | |
+|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
+
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title itemprop="name">Recruited - 俞祯富的博客</title>
+ 
+<meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+<link rel='stylesheet' id='saukra_css-css' href='gh/mashirozx/Sakura@3.3.6/style.min-3.3.6.css' type='text/css' media='all'>
+<link rel='https://api.w.org/' href='https://yuzhenfu.cn/index.php/wp-json/'>
+<style type="text/css">
+.site-top .lower nav {display: block !important;}
+.author-profile i , .post-like a , .post-share .show-share , .sub-text , .we-info a , span.sitename , .post-more i:hover , #pagination a:hover , .post-content a:hover , .float-content i:hover{ color: #FE9600 }
+.feature i , /*.feature-title span ,*/ .download , .navigator i:hover , .links ul li:before , .ar-time i , span.ar-circle , .object , .comment .comment-reply-link , .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after { background: #FE9600 }
+::-webkit-scrollbar-thumb { background: #FE9600 }
+.download , .navigator i:hover , .link-title , .links ul li:hover , #pagination a:hover , .comment-respond input[type='submit']:hover { border-color: #FE9600 }
+.entry-content a:hover , .site-info a:hover , .comment h4 a , #comments-navi a.prev , #comments-navi a.next , .comment h4 a:hover , .site-top ul li a:hover , .entry-title a:hover , #archives-temp h3 , span.page-numbers.current , .sorry li a:hover , .site-title a:hover , i.iconfont.js-toggle-search.iconsearch:hover , .comment-respond input[type='submit']:hover, blockquote:before, blockquote:after { color: #FE9600 }
+
+#aplayer-float .aplayer-lrc-current { color: #FE9600 !important}
+
+.is-active-link::before, .commentbody:not(:placeholder-shown)~.input-label, .commentbody:focus~.input-label {
+    background-color: #FE9600 !important
+}
+
+.commentbody:focus {
+    border-color: #FE9600 !important
+}
+
+.insert-image-tips:hover, .insert-image-tips-hover{ 
+    color: #FE9600;
+    border: 1px solid #FE9600}
+
+.site-top ul li a:after {
+    background-color: #FE9600}
+
+.scrollbar,.butterBar-message {
+    background: #FE9600 !important
+}
+
+#nprogress .spinner-icon{ 
+    border-top-color: #FE9600; 
+    border-left-color: #FE9600}
+
+#nprogress .bar {
+    background: #FE9600}
+
+.changeSkin-gear,.toc{
+    background:rgba(255,255,255,0.8);
+}
+
+.entry-content th {
+    background-color: #FE9600}
+.search-form--modal .search-form__inner {
+    bottom: unset !important;
+    top: 10% !important;
+}
+
+.comments .comments-main {display:block !important;}
+.comments .comments-hidden {display:none !important;}
+.centerbg{background-image: url("index.php/wp-json/sakura/v1/image/cover.jpg");background-position: center center;background-attachment: inherit;}
+.rotating {
+    -webkit-animation: rotating 6s linear infinite;
+    -moz-animation: rotating 6s linear infinite;
+    -ms-animation: rotating 6s linear infinite;
+    -o-animation: rotating 6s linear infinite;
+    animation: rotating 6s linear infinite;
+}
+</style>
+<script>
+/*Initial Variables*/
+var mashiro_option = new Object();
+var mashiro_global = new Object();
+mashiro_option.NProgressON = true;
+mashiro_option.email_domain = "qq.com";
+mashiro_option.email_name = "616180749";
+mashiro_option.cookie_version_control = "";
+mashiro_option.qzone_autocomplete = false;
+mashiro_option.site_name = "Recruited";
+mashiro_option.author_name = "Yuzhenfu";
+mashiro_option.template_url = "https://yuzhenfu.cn/wp-content/themes/Sakura-master";
+mashiro_option.site_url = "https://yuzhenfu.cn";
+mashiro_option.qq_api_url = "https://yuzhenfu.cn/index.php/wp-json/sakura/v1/qqinfo/json"; 
+// mashiro_option.qq_avatar_api_url = "https://api.2heng.xin/qqinfo/";
+mashiro_option.live_search = true;
+
+mashiro_option.skin_bg0 = "none";
+mashiro_option.skin_bg1 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/sakura.png";
+mashiro_option.skin_bg2 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/plaid2dbf8.jpg";
+mashiro_option.skin_bg3 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/star02.png";
+mashiro_option.skin_bg4 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/kyotoanimation.png";
+mashiro_option.skin_bg5 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/dot_orange.gif";
+mashiro_option.skin_bg6 = "https://api.mashiro.top/bing/";
+mashiro_option.skin_bg7 = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.2/other-sites/api-index/images/me.png";
+
+mashiro_option.land_at_home = true;
+
+mashiro_option.baguetteBoxON = true;
+
+mashiro_option.clipboardCopyright = true;
+
+mashiro_option.entry_content_theme_src = "https://yuzhenfu.cn/wp-content/themes/Sakura-master/cdn/theme/sakura.css?3.3.6";
+mashiro_option.entry_content_theme = "sakura";
+
+mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/mashirozx/Sakura@3.3.6/cdn/css/lib.min.css";
+mashiro_option.float_player_on = true;
+
+mashiro_option.cover_api = "index.php/wp-json/sakura/v1/image/cover.jpg";
+
+/*End of Initial Variables*/
+</script>
+<script type="text/javascript">
+if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+  alert('朋友，IE浏览器未适配哦~\n如果是 360、QQ 等双核浏览器，请关闭 IE 模式！');
+}
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="gtag/js-UA-157544790-1.js"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','UA-157544790-1');
+</script>
+</head>
+<body class="home blog hfeed chinese-font">
+	<div class="scrollbar" id="bar"></div>
+	<section id="main-container">
+				<div class="headertop filter-nothing">
+			<figure id="centerbg" class="centerbg">
+	<div class="focusinfo">
+                <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="Hi，Recruited">Hi，Recruited</h1>
+   				<div class="header-info">
+            <p>武汉加油，中国加油。</p>
+                        <div class="top-social_v2">
+                <li id="bg-pre"><img class="flipx" src="gh/moezx/cdn@3.1.9/img/Sakura/images/next-b.svg"></li>
+                                <li><a href="javascript:;" target="_blank" class="social-github" title="github"><img src="gh/moezx/cdn@3.1.9/img/Sakura/images/sns/github.png"></a></li>
+                	
+                                	
+                                <li class="qq"><a href="javascript:;" title="Initiate chat ?"><img src="gh/moezx/cdn@3.1.9/img/Sakura/images/sns/qq.png"></a></li>
+                	
+                                 
+                	
+                                                                <li><a href="javascript:;" target="_blank" class="social-wangyiyun" title="CloudMusic"><img src="gh/moezx/cdn@3.1.9/img/Sakura/images/sns/wangyiyun.png"></a></li>
+                                	
+                	
+                                	
+                		
+                                <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img src="gh/moezx/cdn@3.1.9/img/Sakura/images/sns/email.svg"></a></li>
+                	
+                <li id="bg-next"><img src="gh/moezx/cdn@3.1.9/img/Sakura/images/next-b.svg"></li>	
+            </div>
+                    </div>
+        	</div>
+	</figure>
+<div id="video-container" style="display:none;"><video id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto"></video><div id="video-btn" class="loadvideo videolive"></div><div id="video-add"></div><div class="video-stu"></div></div>		</div>	
+				<div id="page" class="site wrapper">
+			<header class="site-header no-select" role="banner">
+				<div class="site-top">
+					<div class="site-branding">
+												<span class="site-title">
+							<span class="logolink serif">
+								<a href="index1.html">
+									<span class="site-name">Recruited</span>
+								</a>
+							</span>
+						</span>	
+						<!-- logo end -->
+					</div><!-- .site-branding -->
+					  <div class="header-user-avatar">
+    <a href="wp-login.html">
+      <img class="faa-shake animated-hover" src="gh/moezx/cdn@3.1.9/img/Sakura/images/none.png" width="30" height="30">
+    </a>
+    <div class="header-user-menu">
+      <div class="herder-user-name no-logged">Whether to <a href="wp-login.html" target="_blank" style="color:#333;font-weight:bold;text-decoration:none">log in</a> now?
+      </div>
+    </div>
+  </div>
+  					<div class="searchbox"><i class="iconfont js-toggle-search iconsearch icon-search"></i></div>
+										<div class="lower">						<nav><ul id="menu-%e9%a6%96%e9%a1%b5" class="menu"><li class="current-menu-item"><a href="index1.html">首页</a></li>
+<li><a href="index.php/时光轴/index.html">时光轴</a>
+<ul class="sub-menu">
+	<li><a href="index.php/归档/index.html">归档</a></li>
+</ul>
+</li>
+<li><a href="index.php/2020/02/20/考研成绩/index.html">考研成绩</a></li>
+<li><a href="index.php/2020/02/01/hello-world/index.html">世界，您好！</a></li>
+<li><a href="index.php/donate/index.html">赞赏</a></li>
+<li><a href="index.php/about/index.html">关于我</a></li>
+</ul></nav><!-- #site-navigation -->
+					</div>	
+				</div>
+			</header><!-- #masthead -->
+			<div class="blank"></div>		    <div id="content" class="site-content">
+   
+   	<div class="notice" style="margin-top:60px">
+	   <i class="iconfont icon-notification"></i>
+	  			<div class="notice-content">来都来了，就无聊的逛逛嘛！！！</div>
+			</div>
+		
+	<div class="top-feature-row">
+    <h1 class="fes-title" style="font-family: 'Ubuntu', sans-serif;"><i class="fa fa-anchor" aria-hidden="true"></i> Discovery</h1>
+    <div class="top-feature-v2">
+        <div class="the-feature square from_left_and_right">
+            <a href="javascript:;" target="_blank">
+                <div class="img"><img src="wp-content/themes/Sakura-master/screenshot.jpg"></div>
+                <div class="info">
+                    <h3>Sakura</h3>
+                    <p>WordPress 主题</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="top-feature-v2">
+        <div class="the-feature square from_left_and_right" style="margin: 0 4.5px">
+            <a href="wp-content/themes/love/index.html" target="_blank">
+                <div class="img"><img src="wp-content/themes/Sakura-master/images/temp.png"></div>
+                <div class="info">
+                    <h3>Love</h3>
+                    <p>Love</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="top-feature-v2">
+        <div class="the-feature square from_left_and_right">
+            <a href="javascript:;" target="_blank">
+                <div class="img"><img src="HotelSSM1/resources/home/images/index.jpg"></div>
+                <div class="info">
+                    <h3>酒店管理系统</h3>
+                    <p>实战项目上云</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+	
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">	
+		<h1 class="main-title" style="font-family: 'Ubuntu', sans-serif;"><i class="fa fa-envira" aria-hidden="true"></i> Discovery</h1>
+			<article class="post post-list-thumb " itemscope="" itemtype="http://schema.org/BlogPosting">
+		<div class="post-thumb">
+			<a href="index.php/2020/02/20/考研成绩/index.html"><img class="lazyload" src="gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg" data-src="wp-content/uploads/2020/02/TYIE1_97HEF7X1E-1024x684.png"></a>
+		</div><!-- thumbnail-->
+		<div class="post-content-wrap">
+			<div class="post-content">
+				<div class="post-date">
+					<i class="iconfont icon-time"></i>发布于 10 天前									</div>
+				<a href="index.php/2020/02/20/考研成绩/index.html" class="post-title"><h3>考研成绩</h3></a>
+				<div class="post-meta">
+					<span><i class="iconfont icon-attention"></i>1355 热度</span>
+					<span class="comments-number"><i class="iconfont icon-mark"></i><a href="index.php/2020/02/20/考研成绩/index.html#comments">4 条评论</a></span>
+					<span><i class="iconfont icon-file"></i><a href="javascript:;">未分类</a>
+					</span>
+				</div>
+				<div class="float-content">
+					<p>&nbsp; 一、值得 原本10号就能出的，由于疫情，就延后到今天了 今天凌晨就查到了，挺满足这个成绩了。 每个认真考研的人其实都 &#8230;</p>					<div class="post-bottom">
+						<a href="index.php/2020/02/20/考研成绩/index.html" class="button-normal"><i class="iconfont icon-caidan"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="post post-list-thumb post-list-thumb-left" itemscope="" itemtype="http://schema.org/BlogPosting">
+		<div class="post-thumb">
+			<a href="index.php/2020/02/15/java-web-实战项目-部署腾讯云/index.html"><img class="lazyload" src="gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg" data-src="wp-content/uploads/2020/02/TS41ATR5YC2BZ2EH6KCJG.png"></a>
+		</div><!-- thumbnail-->
+		<div class="post-content-wrap">
+			<div class="post-content">
+				<div class="post-date">
+					<i class="iconfont icon-time"></i>发布于 15 天前									</div>
+				<a href="index.php/2020/02/15/java-web-实战项目-部署腾讯云/index.html" class="post-title"><h3>Java  Web 实战项目  部署腾讯云</h3></a>
+				<div class="post-meta">
+					<span><i class="iconfont icon-attention"></i>60 热度</span>
+					<span class="comments-number"><i class="iconfont icon-mark"></i><a href="index.php/2020/02/15/java-web-实战项目-部署腾讯云/index.html#comments">1 条评论</a></span>
+					<span><i class="iconfont icon-file"></i><a href="javascript:;">未分类</a>
+					</span>
+				</div>
+				<div class="float-content">
+					<p>一、打包Java项目 1.打包 2.选择记住 路径 二、需要云服务器 武汉疫情爆发，阿里云免费给全国学生送云服务器 感兴趣的可以去 &#8230;</p>					<div class="post-bottom">
+						<a href="index.php/2020/02/15/java-web-实战项目-部署腾讯云/index.html" class="button-normal"><i class="iconfont icon-caidan"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="post post-list-thumb " itemscope="" itemtype="http://schema.org/BlogPosting">
+		<div class="post-thumb">
+			<a href="index.php/2020/02/14/酒店管理系统/index.html"><img class="lazyload" src="gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg" data-src="HotelSSM1/resources/home/images/index.jpg"></a>
+		</div><!-- thumbnail-->
+		<div class="post-content-wrap">
+			<div class="post-content">
+				<div class="post-date">
+					<i class="iconfont icon-time"></i>发布于 16 天前									</div>
+				<a href="index.php/2020/02/14/酒店管理系统/index.html" class="post-title"><h3>酒店管理系统</h3></a>
+				<div class="post-meta">
+					<span><i class="iconfont icon-attention"></i>24 热度</span>
+					<span class="comments-number"><i class="iconfont icon-mark"></i><a href="index.php/2020/02/14/酒店管理系统/index.html#respond">NOTHING</a></span>
+					<span><i class="iconfont icon-file"></i><a href="javascript:;">未分类</a>
+					</span>
+				</div>
+				<div class="float-content">
+					<p>一、java ssm实战项目 http://yuzhenfu.cn:8080/HotelSSM1/home/login 目前已经上 &#8230;</p>					<div class="post-bottom">
+						<a href="index.php/2020/02/14/酒店管理系统/index.html" class="button-normal"><i class="iconfont icon-caidan"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="post post-list-thumb post-list-thumb-left" itemscope="" itemtype="http://schema.org/BlogPosting">
+		<div class="post-thumb">
+			<a href="index.php/2020/02/12/win10/index.html"><img class="lazyload" src="gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg" data-src="wp-content/uploads/2020/02/7d5bd-7dc9d-9f2db-b8f2c-6b6be-30.png"></a>
+		</div><!-- thumbnail-->
+		<div class="post-content-wrap">
+			<div class="post-content">
+				<div class="post-date">
+					<i class="iconfont icon-time"></i>发布于 17 天前									</div>
+				<a href="index.php/2020/02/12/win10/index.html" class="post-title"><h3>程序员从装系统开始</h3></a>
+				<div class="post-meta">
+					<span><i class="iconfont icon-attention"></i>50 热度</span>
+					<span class="comments-number"><i class="iconfont icon-mark"></i><a href="index.php/2020/02/12/win10/index.html#comments">1 条评论</a></span>
+					<span><i class="iconfont icon-file"></i><a href="javascript:;">未分类</a>
+					</span>
+				</div>
+				<div class="float-content">
+					<p>  一、准备U盘 U盘装系统需要多大的空间呢？ 网上和老传统的人    大多数的答案是16GB以上的吧， 今天，我就只用了一个很老 &#8230;</p>					<div class="post-bottom">
+						<a href="index.php/2020/02/12/win10/index.html" class="button-normal"><i class="iconfont icon-caidan"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="post post-list-thumb " itemscope="" itemtype="http://schema.org/BlogPosting">
+		<div class="post-thumb">
+			<a href="index.php/2020/02/01/留言板/index.html"><img class="lazyload" src="gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg" data-src="index.php/wp-json/sakura/v1/image/feature2.jpg"></a>
+		</div><!-- thumbnail-->
+		<div class="post-content-wrap">
+			<div class="post-content">
+				<div class="post-date">
+					<i class="iconfont icon-time"></i>发布于 29 天前									</div>
+				<a href="index.php/2020/02/01/留言板/index.html" class="post-title"><h3>留言板</h3></a>
+				<div class="post-meta">
+					<span><i class="iconfont icon-attention"></i>19 热度</span>
+					<span class="comments-number"><i class="iconfont icon-mark"></i><a href="index.php/2020/02/01/留言板/index.html#respond">NOTHING</a></span>
+					<span><i class="iconfont icon-file"></i><a href="javascript:;">未分类</a>
+					</span>
+				</div>
+				<div class="float-content">
+										<div class="post-bottom">
+						<a href="index.php/2020/02/01/留言板/index.html" class="button-normal"><i class="iconfont icon-caidan"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="post post-list-thumb post-list-thumb-left" itemscope="" itemtype="http://schema.org/BlogPosting">
+		<div class="post-thumb">
+			<a href="index.php/2020/02/01/hello-world/index.html"><img class="lazyload" src="gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg" data-src="index.php/wp-json/sakura/v1/image/feature2.jpg"></a>
+		</div><!-- thumbnail-->
+		<div class="post-content-wrap">
+			<div class="post-content">
+				<div class="post-date">
+					<i class="iconfont icon-time"></i>发布于 29 天前									</div>
+				<a href="index.php/2020/02/01/hello-world/index.html" class="post-title"><h3>世界，您好！</h3></a>
+				<div class="post-meta">
+					<span><i class="iconfont icon-attention"></i>193 热度</span>
+					<span class="comments-number"><i class="iconfont icon-mark"></i><a href="index.php/2020/02/01/hello-world/index.html#comments">8 条评论</a></span>
+					<span><i class="iconfont icon-file"></i><a href="javascript:;">未分类</a>
+					</span>
+				</div>
+				<div class="float-content">
+					<p>欢迎使用WordPress。这是您的第一篇文章。 纪念一下我的第一个动态博客 搭载在谷歌云上 Hello world &nbsp; &#8230;</p>					<div class="post-bottom">
+						<a href="index.php/2020/02/01/hello-world/index.html" class="button-normal"><i class="iconfont icon-caidan"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="post post-list-thumb " itemscope="" itemtype="http://schema.org/BlogPosting">
+		<div class="post-thumb">
+			<a href="index.php/2020/01/23/linux-网络/index.html"><img class="lazyload" src="gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg" data-src="index.php/wp-json/sakura/v1/image/feature1.jpg"></a>
+		</div><!-- thumbnail-->
+		<div class="post-content-wrap">
+			<div class="post-content">
+				<div class="post-date">
+					<i class="iconfont icon-time"></i>发布于 2020-01-23									</div>
+				<a href="index.php/2020/01/23/linux-网络/index.html" class="post-title"><h3>Linux   网络</h3></a>
+				<div class="post-meta">
+					<span><i class="iconfont icon-attention"></i>4 热度</span>
+					<span class="comments-number"><i class="iconfont icon-mark"></i><a href="index.php/2020/01/23/linux-网络/index.html#respond">NOTHING</a></span>
+					<span><i class="iconfont icon-file"></i><a href="javascript:;">未分类</a>
+					</span>
+				</div>
+				<div class="float-content">
+					<p>二、运行级别 运行模式也可以称之为运行级别（Running Level）。 &nbsp; 在linux中存在一个进程：init （ &#8230;</p>					<div class="post-bottom">
+						<a href="index.php/2020/01/23/linux-网络/index.html" class="button-normal"><i class="iconfont icon-caidan"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="post post-list-thumb post-list-thumb-left" itemscope="" itemtype="http://schema.org/BlogPosting">
+		<div class="post-thumb">
+			<a href="index.php/2020/01/22/linux-权限管理/index.html"><img class="lazyload" src="gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg" data-src="index.php/wp-json/sakura/v1/image/feature.jpg"></a>
+		</div><!-- thumbnail-->
+		<div class="post-content-wrap">
+			<div class="post-content">
+				<div class="post-date">
+					<i class="iconfont icon-time"></i>发布于 2020-01-22									</div>
+				<a href="index.php/2020/01/22/linux-权限管理/index.html" class="post-title"><h3>Linux   权限管理</h3></a>
+				<div class="post-meta">
+					<span><i class="iconfont icon-attention"></i>2 热度</span>
+					<span class="comments-number"><i class="iconfont icon-mark"></i><a href="index.php/2020/01/22/linux-权限管理/index.html#respond">NOTHING</a></span>
+					<span><i class="iconfont icon-file"></i><a href="javascript:;">未分类</a>
+					</span>
+				</div>
+				<div class="float-content">
+					<p>一、权限管理 1、权限介绍（重点） 在Linux中分别有读、写、执行权限： 读权限： 对于文件夹来说，读权限影响用户是否能够列出目 &#8230;</p>					<div class="post-bottom">
+						<a href="index.php/2020/01/22/linux-权限管理/index.html" class="button-normal"><i class="iconfont icon-caidan"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="post post-list-thumb " itemscope="" itemtype="http://schema.org/BlogPosting">
+		<div class="post-thumb">
+			<a href="index.php/2020/01/21/linux-用户组/index.html"><img class="lazyload" src="gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg" data-src="index.php/wp-json/sakura/v1/image/feature2.jpg"></a>
+		</div><!-- thumbnail-->
+		<div class="post-content-wrap">
+			<div class="post-content">
+				<div class="post-date">
+					<i class="iconfont icon-time"></i>发布于 2020-01-21									</div>
+				<a href="index.php/2020/01/21/linux-用户组/index.html" class="post-title"><h3>Linux 用户组</h3></a>
+				<div class="post-meta">
+					<span><i class="iconfont icon-attention"></i>4 热度</span>
+					<span class="comments-number"><i class="iconfont icon-mark"></i><a href="index.php/2020/01/21/linux-用户组/index.html#respond">NOTHING</a></span>
+					<span><i class="iconfont icon-file"></i><a href="javascript:;">未分类</a>
+					</span>
+				</div>
+				<div class="float-content">
+					<p>三、用户与用户组（重点） Linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个 &#8230;</p>					<div class="post-bottom">
+						<a href="index.php/2020/01/21/linux-用户组/index.html" class="button-normal"><i class="iconfont icon-caidan"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<article class="post post-list-thumb post-list-thumb-left" itemscope="" itemtype="http://schema.org/BlogPosting">
+		<div class="post-thumb">
+			<a href="index.php/2020/01/20/linux-vim编辑器/index.html"><img class="lazyload" src="gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg" data-src="index.php/wp-json/sakura/v1/image/feature.jpg"></a>
+		</div><!-- thumbnail-->
+		<div class="post-content-wrap">
+			<div class="post-content">
+				<div class="post-date">
+					<i class="iconfont icon-time"></i>发布于 2020-01-20									</div>
+				<a href="index.php/2020/01/20/linux-vim编辑器/index.html" class="post-title"><h3>Linux vim编辑器</h3></a>
+				<div class="post-meta">
+					<span><i class="iconfont icon-attention"></i>8 热度</span>
+					<span class="comments-number"><i class="iconfont icon-mark"></i><a href="index.php/2020/01/20/linux-vim编辑器/index.html#respond">NOTHING</a></span>
+					<span><i class="iconfont icon-file"></i><a href="javascript:;">未分类</a>
+					</span>
+				</div>
+				<div class="float-content">
+					<p>二、vim编辑器 1、vi介绍 Vi编辑器是所有Unix及Linux系统下标准的编辑器，类似于windows系统下的notepad &#8230;</p>					<div class="post-bottom">
+						<a href="index.php/2020/01/20/linux-vim编辑器/index.html" class="button-normal"><i class="iconfont icon-caidan"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</article>
+				</main><!-- #main -->
+				<div id="pagination"><a href="index.php/page/2/index.html"> Previous</a></div>
+		<div id="add_post"><span id="add_post_time" style="visibility: hidden;" title="233"></span></div>
+			</div><!-- #primary -->
+	</div><!-- #content -->
+		</div><!-- #page Pjax container-->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info" theme-info="Sakura v3.3.6">
+			<div class="footertext">
+				<div class="img-preload">
+					<img src="gh/moezx/cdn@3.1.9/img/Sakura/images/wordpress-rotating-ball-o.svg">
+					<img src="gh/moezx/cdn@3.1.9/img/Sakura/images/disqus-preloader.svg">
+				</div>
+				<p style="color: #666666;">Copyright &copy; by Yuzhenfu All Rights Reserved    |   鲁ICP备20004127号</p>
+			</div>
+			<div class="footer-device">
+			<p style="font-family: 'Ubuntu', sans-serif;">
+					<span style="color: #b9b9b9;">
+												Theme <a href="javascript:;" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="javascript:;" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>
+					</span>
+				</p>
+			</div>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+	<div class="openNav no-select">
+		<div class="iconflat no-select">	 
+			<div class="icon"></div>
+		</div>
+		<div class="site-branding">
+						<h1 class="site-title"><a href="index1.html">Recruited</a></h1>
+					</div>
+	</div><!-- m-nav-bar -->
+	</section><!-- #section -->
+	<!-- m-nav-center -->
+	<div id="mo-nav">
+		<div class="m-avatar">
+						<img src="wp-content/uploads/2020/02/OST9SHLQ95MTTBNV.png">
+		</div>
+		<div class="m-search">
+			<form class="m-search-form" method="get" action="https://yuzhenfu.cn" role="search">
+				<input class="m-search-input" type="search" name="s" placeholder="搜索..." required="">
+			</form>
+		</div>
+		<ul id="menu-%e9%a6%96%e9%a1%b5-1" class="menu"><li class="current-menu-item"><a href="index1.html">首页</a></li>
+<li><a href="index.php/时光轴/index.html">时光轴</a>
+<ul class="sub-menu">
+	<li><a href="index.php/归档/index.html">归档</a></li>
+</ul>
+</li>
+<li><a href="index.php/2020/02/20/考研成绩/index.html">考研成绩</a></li>
+<li><a href="index.php/2020/02/01/hello-world/index.html">世界，您好！</a></li>
+<li><a href="index.php/donate/index.html">赞赏</a></li>
+<li><a href="index.php/about/index.html">关于我</a></li>
+</ul>	</div><!-- m-nav-center end -->
+	<a class="cd-top faa-float animated "></a>
+	<button onclick="topFunction()" id="moblieGoTop" title="Go to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+	<!-- search start -->
+	<form class="js-search search-form search-form--modal" method="get" action="https://yuzhenfu.cn" role="search">
+		<div class="search-form__inner">
+					<div class="micro">
+				<i class="iconfont icon-search"></i>
+				<input id="search-input" class="text-input" type="search" name="s" placeholder="想要找点什么呢？" required="">
+			</div>
+			<div class="ins-section-wrapper">
+                <a id="Ty" href="index1.html#"></a>
+                <div class="ins-section-container" id="PostlistBox"></div>
+            </div>
+				</div>
+		<div class="search_close"></div>
+	</form>
+	<!-- search end -->
+<script type='text/javascript' src='gh/mashirozx/Sakura@3.3.6/cdn/js/lib.min-3.3.6.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Poi = {"pjax":"1","movies":"close","windowheight":"auto","codelamp":"close","ajaxurl":"https:\/\/yuzhenfu.cn\/wp-admin\/admin-ajax.php","order":"asc","formpostion":"bottom","reply_link_version":"old","api":"https:\/\/yuzhenfu.cn\/index.php\/wp-json\/","nonce":"92fe4e08c3"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='gh/mashirozx/Sakura@3.3.6/js/sakura-app.min-3.3.6.js'></script>
+<script type='text/javascript' src='github-cards/latest/widget-3.3.6.js'></script>
+<script type='text/javascript' src='wp-includes/js/wp-embed.min-4.8.12.js'></script>
+<div class="changeSkin-gear no-select" style="bottom: -999px;">
+    <div class="keys">
+        <span id="open-skinMenu">
+		<i class="iconfont icon-gear inline-block rotating"></i>&nbsp; 切换主题 | SCHEME TOOL 
+        </span>
+    </div>
+</div>
+<div class="skin-menu no-select">
+    <div class="theme-controls row-container">
+        <ul class="menu-list">
+            <li id="white-bg">
+                <i class="fa fa-television" aria-hidden="true"></i>
+            </li><!--Default-->
+            <li id="sakura-bg">
+                <i class="iconfont icon-sakura"></i>
+            </li><!--Sakura-->
+            <li id="gribs-bg">
+                <i class="fa fa-slack" aria-hidden="true"></i>
+            </li><!--Grids-->
+            <li id="KAdots-bg">
+                <i class="iconfont icon-dots"></i>
+            </li><!--Dots-->
+            <li id="totem-bg">
+                <i class="fa fa-superpowers" aria-hidden="true"></i>
+            </li><!--Orange-->
+            <li id="pixiv-bg">
+                <i class="iconfont icon-pixiv"></i>
+            </li><!--Start-->
+            <li id="bing-bg">
+                <i class="iconfont icon-bing"></i>
+            </li><!--Bing-->
+            <li id="dark-bg">
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </li><!--Night-->
+        </ul>
+    </div>
+    <div class="font-family-controls row-container">
+        <button type="button" class="control-btn-serif selected" data-mode="serif" onclick="mashiro_global.font_control.change_font()">Serif</button>
+        <button type="button" class="control-btn-sans-serif" data-mode="sans-serif" onclick="mashiro_global.font_control.change_font()">Sans Serif</button>
+    </div>
+</div>
+<canvas id="night-mode-cover"></canvas>
+    <div id="aplayer-float" style="z-index: 100;" class="aplayer" data-id="3225684104" data-server="netease" data-type="playlist" data-fixed="true" data-theme="orange">
+    </div>
+</body>
+</html>

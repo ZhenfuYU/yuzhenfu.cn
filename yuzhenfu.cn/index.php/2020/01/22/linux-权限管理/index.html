@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<!-- 
+Theme by Mashiro
+                      /^--^\     /^--^\     /^--^\
+                      \____/     \____/     \____/
+                     /      \   /      \   /      \
+                    |        | |        | |        |
+                     \__  __/   \__  __/   \__  __/
+|^|^|^|^|^|^|^|^|^|^|^|^\ \^|^|^|^/ /^|^|^|^|^\ \^|^|^|^|^|^|^|^|^|^|^|^|
+| | | | | | | | | | | | |\ \| | |/ /| | | | | | \ \ | | | | | | | | | | |
+########################/ /######\ \###########/ /#######################
+| | | | | | | | | | | | \/| | | | \/| | | | | |\/ | | | | | | | | | | | |
+|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
+
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title itemprop="name">Linux   权限管理 &#8211; Recruited</title>
+ 
+<meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+<link rel='stylesheet' id='saukra_css-css' href='../../../../../gh/mashirozx/Sakura@3.3.6/style.min-3.3.6.css' type='text/css' media='all'>
+<link rel='https://api.w.org/' href='https://yuzhenfu.cn/index.php/wp-json/'>
+<link rel='prev' title='Linux 用户组' href='../../21/linux-用户组/index.html'>
+<link rel='next' title='Linux   网络' href='../../23/linux-网络/index.html'>
+<link rel="canonical" href="">
+<link rel='shortlink' href='https://yuzhenfu.cn/?p=281'>
+<link rel="alternate" type="application/json+oembed" href="https://yuzhenfu.cn/index.php/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fyuzhenfu.cn%2Findex.php%2F2020%2F01%2F22%2Flinux-%25e6%259d%2583%25e9%2599%2590%25e7%25ae%25a1%25e7%2590%2586%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://yuzhenfu.cn/index.php/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fyuzhenfu.cn%2Findex.php%2F2020%2F01%2F22%2Flinux-%25e6%259d%2583%25e9%2599%2590%25e7%25ae%25a1%25e7%2590%2586%2F&#038;format=xml">
+<style type="text/css">
+.site-top .lower nav {display: block !important;}
+.author-profile i , .post-like a , .post-share .show-share , .sub-text , .we-info a , span.sitename , .post-more i:hover , #pagination a:hover , .post-content a:hover , .float-content i:hover{ color: #FE9600 }
+.feature i , /*.feature-title span ,*/ .download , .navigator i:hover , .links ul li:before , .ar-time i , span.ar-circle , .object , .comment .comment-reply-link , .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after { background: #FE9600 }
+::-webkit-scrollbar-thumb { background: #FE9600 }
+.download , .navigator i:hover , .link-title , .links ul li:hover , #pagination a:hover , .comment-respond input[type='submit']:hover { border-color: #FE9600 }
+.entry-content a:hover , .site-info a:hover , .comment h4 a , #comments-navi a.prev , #comments-navi a.next , .comment h4 a:hover , .site-top ul li a:hover , .entry-title a:hover , #archives-temp h3 , span.page-numbers.current , .sorry li a:hover , .site-title a:hover , i.iconfont.js-toggle-search.iconsearch:hover , .comment-respond input[type='submit']:hover, blockquote:before, blockquote:after { color: #FE9600 }
+
+#aplayer-float .aplayer-lrc-current { color: #FE9600 !important}
+
+.is-active-link::before, .commentbody:not(:placeholder-shown)~.input-label, .commentbody:focus~.input-label {
+    background-color: #FE9600 !important
+}
+
+.commentbody:focus {
+    border-color: #FE9600 !important
+}
+
+.insert-image-tips:hover, .insert-image-tips-hover{ 
+    color: #FE9600;
+    border: 1px solid #FE9600}
+
+.site-top ul li a:after {
+    background-color: #FE9600}
+
+.scrollbar,.butterBar-message {
+    background: #FE9600 !important
+}
+
+#nprogress .spinner-icon{ 
+    border-top-color: #FE9600; 
+    border-left-color: #FE9600}
+
+#nprogress .bar {
+    background: #FE9600}
+
+.changeSkin-gear,.toc{
+    background:rgba(255,255,255,0.8);
+}
+
+.entry-content th {
+    background-color: #FE9600}
+.search-form--modal .search-form__inner {
+    bottom: unset !important;
+    top: 10% !important;
+}
+
+.comments .comments-main {display:block !important;}
+.comments .comments-hidden {display:none !important;}
+.centerbg{background-image: url("../../../../wp-json/sakura/v1/image/cover.jpg");background-position: center center;background-attachment: inherit;}
+.rotating {
+    -webkit-animation: rotating 6s linear infinite;
+    -moz-animation: rotating 6s linear infinite;
+    -ms-animation: rotating 6s linear infinite;
+    -o-animation: rotating 6s linear infinite;
+    animation: rotating 6s linear infinite;
+}
+</style>
+<script>
+/*Initial Variables*/
+var mashiro_option = new Object();
+var mashiro_global = new Object();
+mashiro_option.NProgressON = true;
+mashiro_option.email_domain = "qq.com";
+mashiro_option.email_name = "616180749";
+mashiro_option.cookie_version_control = "";
+mashiro_option.qzone_autocomplete = false;
+mashiro_option.site_name = "Recruited";
+mashiro_option.author_name = "Yuzhenfu";
+mashiro_option.template_url = "https://yuzhenfu.cn/wp-content/themes/Sakura-master";
+mashiro_option.site_url = "https://yuzhenfu.cn";
+mashiro_option.qq_api_url = "https://yuzhenfu.cn/index.php/wp-json/sakura/v1/qqinfo/json"; 
+// mashiro_option.qq_avatar_api_url = "https://api.2heng.xin/qqinfo/";
+mashiro_option.live_search = true;
+
+mashiro_option.skin_bg0 = "none";
+mashiro_option.skin_bg1 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/sakura.png";
+mashiro_option.skin_bg2 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/plaid2dbf8.jpg";
+mashiro_option.skin_bg3 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/star02.png";
+mashiro_option.skin_bg4 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/kyotoanimation.png";
+mashiro_option.skin_bg5 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/dot_orange.gif";
+mashiro_option.skin_bg6 = "https://api.mashiro.top/bing/";
+mashiro_option.skin_bg7 = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.2/other-sites/api-index/images/me.png";
+
+mashiro_option.land_at_home = false;
+
+mashiro_option.baguetteBoxON = true;
+
+mashiro_option.clipboardCopyright = true;
+
+mashiro_option.entry_content_theme_src = "https://yuzhenfu.cn/wp-content/themes/Sakura-master/cdn/theme/sakura.css?3.3.6";
+mashiro_option.entry_content_theme = "sakura";
+
+mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/mashirozx/Sakura@3.3.6/cdn/css/lib.min.css";
+mashiro_option.float_player_on = true;
+
+mashiro_option.cover_api = "../../../../wp-json/sakura/v1/image/cover.jpg";
+
+/*End of Initial Variables*/
+</script>
+<script type="text/javascript">
+if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+  alert('朋友，IE浏览器未适配哦~\n如果是 360、QQ 等双核浏览器，请关闭 IE 模式！');
+}
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="../../../../../gtag/js-UA-157544790-1.js"></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','UA-157544790-1');
+</script>
+</head>
+<body class="post-template-default single single-post postid-281 single-format-standard chinese-font">
+	<div class="scrollbar" id="bar"></div>
+	<section id="main-container">
+				<div class="headertop filter-nothing">
+			<figure id="centerbg" class="centerbg">
+	<div class="focusinfo">
+                <h1 class="center-text glitch is-glitching Ubuntu-font" data-text="Hi，Recruited">Hi，Recruited</h1>
+   				<div class="header-info">
+            <p>武汉加油，中国加油。</p>
+                        <div class="top-social_v2">
+                <li id="bg-pre"><img class="flipx" src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/next-b.svg"></li>
+                                <li><a href="javascript:;" target="_blank" class="social-github" title="github"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/sns/github.png"></a></li>
+                	
+                                	
+                                <li class="qq"><a href="javascript:;" title="Initiate chat ?"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/sns/qq.png"></a></li>
+                	
+                                 
+                	
+                                                                <li><a href="javascript:;" target="_blank" class="social-wangyiyun" title="CloudMusic"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/sns/wangyiyun.png"></a></li>
+                                	
+                	
+                                	
+                		
+                                <li><a onclick="mail_me()" class="social-wangyiyun" title="E-mail"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/sns/email.svg"></a></li>
+                	
+                <li id="bg-next"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/next-b.svg"></li>	
+            </div>
+                    </div>
+        	</div>
+	</figure>
+<div id="video-container" style="display:none;"><video id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto"></video><div id="video-btn" class="loadvideo videolive"></div><div id="video-add"></div><div class="video-stu"></div></div>		</div>	
+				<div id="page" class="site wrapper">
+			<header class="site-header no-select" role="banner">
+				<div class="site-top">
+					<div class="site-branding">
+												<span class="site-title">
+							<span class="logolink serif">
+								<a href="../../../../../index1.html">
+									<span class="site-name">Recruited</span>
+								</a>
+							</span>
+						</span>	
+						<!-- logo end -->
+					</div><!-- .site-branding -->
+					  <div class="header-user-avatar">
+    <a href="../../../../../wp-login.html">
+      <img class="faa-shake animated-hover" src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/none.png" width="30" height="30">
+    </a>
+    <div class="header-user-menu">
+      <div class="herder-user-name no-logged">Whether to <a href="../../../../../wp-login.html" target="_blank" style="color:#333;font-weight:bold;text-decoration:none">log in</a> now?
+      </div>
+    </div>
+  </div>
+  					<div class="searchbox"><i class="iconfont js-toggle-search iconsearch icon-search"></i></div>
+										<div class="lower">						<nav><ul id="menu-%e9%a6%96%e9%a1%b5" class="menu"><li><a href="../../../../../index1.html">首页</a></li>
+<li><a href="../../../../时光轴/index.html">时光轴</a>
+<ul class="sub-menu">
+	<li><a href="../../../../归档/index.html">归档</a></li>
+</ul>
+</li>
+<li><a href="../../../02/20/考研成绩/index.html">考研成绩</a></li>
+<li><a href="../../../02/01/hello-world/index.html">世界，您好！</a></li>
+<li><a href="../../../../donate/index.html">赞赏</a></li>
+<li><a href="../../../../about/index.html">关于我</a></li>
+</ul></nav><!-- #site-navigation -->
+					</div>	
+				</div>
+			</header><!-- #masthead -->
+			<div class="blank"></div>		    <div id="content" class="site-content">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+		
+<article id="post-281" class="post-281 post type-post status-publish format-standard hentry category-uncategorized">
+		<header class="entry-header">
+		<h1 class="entry-title">Linux   权限管理</h1>
+		<p class="entry-census">发布于 2020-01-22&nbsp;&nbsp;3 次阅读 </p>
+		<hr>
+	</header><!-- .entry-header -->
+		<!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+	<div class="entry-content">
+		<h1><strong><b>一、权限管理<div class="has-toc have-toc"></div></b></strong></h1>
+<h2><strong><b>1、权限介绍（重点）</b></strong></h2>
+<p>在Linux中分别有<strong><b>读、写、执行</b></strong>权限：</p>
+<p><span style="color: #ff0000;"><strong><b>读权限：</b></strong></span></p>
+<p><strong><b>对于文件夹来说，读权限影响用户是否能够列出目录结构</b></strong></p>
+<p><strong><b>对于文件来说，读权限影响用户是否可以查看文件内容</b></strong></p>
+<p><strong><b> </b></strong></p>
+<p><span style="color: #ff0000;"><strong><b>写权限：</b></strong></span></p>
+<p><strong><b>对文件夹来说，写权限影响用户是否可以在文件夹下“创建/删除/复制到/移动到”文档</b></strong></p>
+<p><strong><b>对于文件来说，写权限影响用户是否可以编辑文件内容</b></strong></p>
+<p><strong><b> </b></strong></p>
+<p><span style="color: #ff0000;"><strong><b>执行</b></strong><strong><b>权限：</b></strong></span></p>
+<p><strong><b>一般都是对于文件来说，特别<span style="color: #ff0000;">脚本</span>文件。</b></strong></p>
+<p><strong><b>对于文件来说，执行权限影响文件是否可以运行。</b></strong></p>
+<p><strong><b>对于文件夹来说，执行权限影响对应的用户是否可以在文件夹内执行指令</b></strong><strong><b>。</b></strong></p>
+<p>&nbsp;</p>
+<h2><strong><b>2、身份介绍（重点）</b></strong></h2>
+<h3><span style="color: #ff0000;"><strong><b>O</b></strong></span><strong><b><span style="color: #ff0000;">wner身份</span>（文档所有者，默认为文档的</b></strong><strong><b>创建者</b></strong><strong><b>）</b></strong></h3>
+<p>由于Linux是多用户、多任务的操作系统，因此可能常常有多人同时在某台主机上工作，但每个人均可在主机上设置文件的权限，让其成为个人的“私密文件”，即个人所有者。因为设置了适当的文件权限，除本人（文件所有者）之外的用户无法查看文件内容。</p>
+<p>&nbsp;</p>
+<p>例如某个MM给你发了一封Email情书，你将情书转为文件之后存档在自己的主文件夹中。为了不让别人看到情书的内容，你就能利用所有者的身份去设置文件的适当权限，这样，即使你的情敌想偷看你的情书内容也是做不到的。</p>
+<h3><strong><b><span style="color: #ff0000;">Group身份</span>（与文件所有者同组的用户）</b></strong></h3>
+<p>与文件所有者同组最有用的功能就体现在<strong><b>多个团队在同一台主机上开发资源的时候</b></strong>。例如主机上有A、B两个团体（用户组），A中有a1,a2,a3三个成员，B中有b1,b2两个成员，这两个团体要共同完成一份报告F。由于设置了适当的权限，A、B团体中的成员都能互相修改对方的数据，但是团体C的成员则不能修改F的内容，甚至连查看的权限都没有。同时，团体的成员也能设置自己的私密文件，让团队的其它成员也读取不了文件数据。<strong><b>在Linux中，每个账户支持多个用户组。如用户a</b></strong><strong><b>1</b></strong><strong><b>、b1即可属于A用户组，也能属于B用户组【主组和附加组】</b></strong>。</p>
+<h3><strong><b><span style="color: #ff0000;">Others身份</span>（其他人，相对于所有者与同组用户）</b></strong></h3>
+<p>这个是个相对概念。打个比方，大明、二明、小明一家三兄弟住在一间房，房产证上的登记者是大明（owner所有者），那么，大明一家就是一个用户组，这个组有大明、二明、小明三个成员；另外有个人叫张三，和他们三没有关系，那么这个张三就是其他人（others）了。</p>
+<p>同时，大明、二明、小明有各自的房间，三者虽然能自由进出各自的房间，但是小明不能让大明看到自己的情书、日记等，这就是文件所有者（用户）的意义。</p>
+<h3><span style="color: #ff0000;"><strong><b>R</b></strong></span><strong><b><span style="color: #ff0000;">oot用户</span>（超级用户）</b></strong></h3>
+<p>在Linux中，还有一个神一样存在的用户，这就是root用户，因为在所有用户中它拥有最大的权限 ，所以管理着普通用户。因此以后在设置文档的权限的时候不必考虑root用户。</p>
+<p>&nbsp;</p>
+<h2><strong><b>3、Linux的权限查看</b></strong></h2>
+<p>要设置权限，就需要知道文件的一些基本属性和权限的分配规则。在Linux中，ls命令常用来查看文档的属性，用于显示文件的文件名和相关属性。</p>
+<p><span style="color: #ff0000;"><strong><b>#ls</b></strong><strong><b> -</b></strong><strong><b>l</b></strong><strong><b> </b></strong><strong><b>路径</b></strong> <strong><b>【ls</b></strong><strong><b> </b></strong><strong><b>-l</b></strong><strong><b>  </b></strong><strong><b>等价于 ll】</b></strong></span></p>
+<p>&nbsp;</p>
+<p>标红的部分就是Linux的文档权限属性信息。</p>
+<p><strong><b>Linux中存在用户（owner）、用户组（group）和其他人（others）概念</b></strong>，各自有不同的权限，对于一个文档来说，其权限具体分配如下：</p>
+<p><strong><b>十位字符表示含义：</b></strong></p>
+<p><strong><b>第1位：表示文档类型，取值常见的有<span style="color: #ff0000;">“</span></b></strong><strong><b><span style="color: #ff0000;">d表示文件夹”</span>、“-表示文件”</b></strong><strong><b>、<span style="color: #ff0000;">“l表示软连接”</span>、“s表示套接字”、“c表示字符设备”、“b表示块状设备”等等；</b></strong></p>
+<p><strong><b>第</b></strong><strong><b>2</b></strong><strong><b>-</b></strong><strong><b>4</b></strong><strong><b>位：表示文档</b></strong><span style="color: #ff0000;"><strong><b>所有者</b></strong></span><strong><b>的权限情况，第2位表示读权限的情况，取值有r、-；第3位表示写权限的情况，w表示可写，-表示不可写，第4位表示<span style="color: #ff0000;">执行权限</span>的情况，取值有<span style="color: #ff0000;">x</span>、-。</b></strong></p>
+<p><strong><b>第5-</b></strong><strong><b>7</b></strong><strong><b>位：表示与所有者</b></strong><span style="color: #ff0000;"><strong><b>同在一个组的用户</b></strong></span><strong><b>的权限情况，第</b></strong><strong><b>5</b></strong><strong><b>位表示读权限的情况，取值有r、-；第</b></strong><strong><b>6</b></strong><strong><b>位表示写权限的情况，w表示可写，-表示不可写，第</b></strong><strong><b>7</b></strong><strong><b>位表示执行权限的情况，取值有x、-。</b></strong></p>
+<p><strong><b>第8</b></strong><strong><b>-10</b></strong><strong><b>位：表示除了上面的前2部分的用户之外的</b></strong><span style="color: #ff0000;"><strong><b>其他用户</b></strong></span><strong><b>的权限情况，第</b></strong><strong><b>8</b></strong><strong><b>位表示读权限的情况，取值有r、-；第</b></strong><strong><b>9</b></strong><strong><b>位表示写权限的情况，w表示可写，-表示不可写，第</b></strong><strong><b>10</b></strong><strong><b>位表示执行权限的情况，取值有x、-。</b></strong></p>
+<p>&nbsp;</p>
+<p><strong><b>注意：除了权限位上的rwx以及-之外，还有一些特殊的权限代码“s”、“t”，这些不在本次考虑范围内。（<span style="color: #ff0000;">黏贴位</span>，特殊权限位）</b></strong></p>
+<p>&nbsp;</p>
+<p>权限分配中,均是rwx的三个参数组合，<strong><b>且位置顺序不会变化</b></strong>。没有对应权限就用 – 代替。</p>
+<p>&nbsp;</p>
+<h2><strong><b>4、权限设置（重点）</b></strong></h2>
+<p><strong><b>语法：<span style="color: #ff0000;">#chmod</span></b></strong><span style="color: #ff0000;"><strong><b> [</b></strong><strong><b>选项] 权限模式 文档路径</b></strong></span></p>
+<p>注意事项：</p>
+<p>常用选项：</p>
+<p><span style="color: #ff0000;">-R：递归设置权限</span> （<strong><b>当文档类型为文件夹的时候</b></strong>）</p>
+<p>权限模式：就是该文档需要设置的权限信息</p>
+<p>文档：可以是文件，也可以是文件夹，可以是相对路径也可以是绝对路径。</p>
+<p><strong><b>注意点：如果想要给文档设置权限，操作者要么是root用户，要么就是文档的所有者。</b></strong></p>
+<h3><strong><b>4.</b></strong><strong><b>1、字母形式</b></strong></h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;">给谁设置：</span></p>
+<p>u：表示所有者身份owner（user）</p>
+<p>g：表示给所有者同组用户设置（group）</p>
+<p>o：表示others，给其他用户设置权限</p>
+<p>a：表示all，给所有人（包含ugo部分）设置权限</p>
+<p><strong><b>如果在设置权限的时候不指定给谁设置，则默认给所有用户设置</b></strong></p>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;">什么权限</span>-权限字符：</p>
+<p>r：读</p>
+<p>w：写</p>
+<p>x：表示执行</p>
+<p>-：表示没有权限</p>
+<p>&nbsp;</p>
+<p><span style="color: #ff0000;">如何设置</span>-权限分配方式：</p>
+<p>+：表示给具体的用户新增权限（相对当前）</p>
+<p>-：表示删除用户的权限（相对当前）</p>
+<p>=：表示将权限设置成具体的值（注重结果）【赋值】</p>
+<p>&nbsp;</p>
+<p><strong><b>设置多个身份的权限时候，每个身份之间需要通过英文逗号分开。</b></strong></p>
+<p>&nbsp;</p>
+<p><strong><b>例如：需要给/</b></strong><strong><b>root/anaconda-ks.cfg</b></strong><strong><b>文件（</b></strong><strong><b>-</b></strong><strong><b>rw-------.</b></strong><strong><b>）设置权限，要求所有者拥有全部的权限，同组用户拥有读和写权限，其他用户只读权限。</b></strong></p>
+<p>答案：</p>
+<p><span style="color: #ff0000;">#chmod u+x,g+rw,o+r /root/anaconda-ks.cfg</span></p>
+<p>或者：</p>
+<p><span style="color: #ff0000;">#chmod u=rwx,g=rw,o=r /root/anaconda-ks.cfg</span></p>
+<p><strong><b> </b></strong></p>
+<p><strong><b>提示：当文档拥有</b></strong><span style="color: #ff0000;"><strong><b>执行</b></strong></span><strong><b>权限（任意部分），则其颜色在终端中是<span style="color: #ff0000;">绿色</span>。</b></strong></p>
+<p>&nbsp;</p>
+<p><strong><b>#chmod</b></strong><strong><b> </b></strong><strong><b>ug=rwx</b></strong><strong><b>  </b></strong><strong><b>形式，如果</b></strong><strong><b>有两部分权限一样则可以合在一起写</b></strong><strong><b>的</b></strong></p>
+<p><strong><b>等价于：</b></strong></p>
+<p><strong><b>#chmod</b></strong><strong><b> u=rwx,g=rwx</b></strong></p>
+<p><strong><b> </b></strong></p>
+<p><strong><b>例如：如果</b></strong><strong><b>anaconda-ks.cfg</b></strong><strong><b>文件</b></strong><strong><b>什么权限都没有</b></strong><strong><b>，可以使用root用户设置所有的人都有执行权限，则可以写成</b></strong></p>
+<p><strong><b>什么权限都没有应该是：----------</b></strong></p>
+<p><strong><b>目标的效果：-</b></strong><strong><b>--</b></strong><strong><b>x</b></strong><strong><b>--x--x</b></strong></p>
+<p><strong><b>#</b></strong><strong><b>chmod a=x anaconda-ks.cfg</b></strong></p>
+<p><strong><b>#</b></strong><strong><b>chmod a+x anaconda-ks.cfg</b></strong></p>
+<p><strong><b>#</b></strong><strong><b>chmod u+x,g+x,o+x anaconda-ks.cfg</b></strong></p>
+<p><strong><b>#</b></strong><strong><b>chmod ugo=x anaconda-ks.cfg</b></strong></p>
+<p><strong><b>#</b></strong><strong><b>chmod ugo+x anaconda-ks.cfg</b></strong></p>
+<p><strong><b>#</b></strong><strong><b>chmod +x anaconda-ks.cfg</b></strong></p>
+<p><strong><b> </b></strong></p>
+<p><strong><b> </b></strong></p>
+<p><strong><b>案例：设置文件“~</b></strong><strong><b>/php/php.txt</b></strong><strong><b>”权限，要求所有者</b></strong><strong><b>全部权限</b></strong><strong><b>，同组用户拥有</b></strong><strong><b>读权限、写权限</b></strong><strong><b>，其他人拥有</b></strong><strong><b>读权限</b></strong></p>
+<p>#chmod u=rwx,g=rw,o=r <strong><b>~</b></strong><strong><b>/php/php.txt</b></strong></p>
+<p><strong><b> </b></strong></p>
+<p><strong><b>更改要求：所有者全部权限，同组用户拥有读权限、写权限，其他人拥有读权限、</b></strong><strong><b>写权限</b></strong></p>
+<p>#chmod o+w <strong><b>~</b></strong><strong><b>/php/php.txt</b></strong></p>
+<p><strong><b> </b></strong></p>
+<p><strong><b>练习：</b></strong></p>
+<p><strong><b>①设置文件夹/tmp</b></strong><strong><b>/</b></strong><strong><b>php的权限（如果文件夹不存在，自行创建），要求权限为递归权限，并且所有者有全部权限，同组用户有读执行权限，其他用户只读权限；</b></strong></p>
+<p><strong><b>#</b></strong><strong><b>mkdir </b></strong><strong><b>/</b></strong><strong><b>tmp/php</b></strong></p>
+<p><strong><b>#</b></strong><strong><b>chmod -R u=rwx,g=rx,o=r /tmp/php</b></strong></p>
+<p><strong><b>②设置文件/tmp</b></strong><strong><b>/</b></strong><strong><b>php</b></strong><strong><b>/</b></strong><strong><b>class</b></strong><strong><b>.</b></strong><strong><b>sh权限，文件如果不存在则自行创建，要求权限为所有者全部权限，同组用户读和执行权限，其他用户没有权限；</b></strong></p>
+<p><strong><b>#touch /tmp/php/class.sh</b></strong></p>
+<p><strong><b>#chmod u=rwx,g=rx,o=--- /tmp/php/class.sh</b></strong></p>
+<p><strong><b>③使用普通用户在/tmp</b></strong><strong><b>/</b></strong><strong><b>php目录下创建test目录，设置目录权限为所有者拥有全部权限，同组用户只读，其他用户只读；（创建不了test用户）</b></strong></p>
+<h3><strong><b>4.</b></strong><strong><b>2、数字形式</b></strong></h3>
+<p>经常会在一些技术性的网页上看到类似于<strong><b>#chmod</b></strong><strong><b>  777  </b></strong><strong><b>a</b></strong><strong><b>.</b></strong><strong><b>txt</b></strong>  这样的一个权限，这种形式称之为数字形式权限（777）。</p>
+<p>&nbsp;</p>
+<p><strong><b>读：r</b></strong><strong><b>        4</b></strong></p>
+<p><strong><b>写：w</b></strong> <strong><b> 2</b></strong></p>
+<p><strong><b>执行：x</b></strong> <strong><b> 1</b></strong></p>
+<p>没有任何权限（-）：0</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong><b>组合权限数字的时候遵循，最短路径要求，并且最多只能出现一次。</b></strong></p>
+<p>&nbsp;</p>
+<p>例如：需要给anaconda-ks.cfg设置权限，权限要求所有者拥有全部权限，同组用户拥有读执行权限，其他用户只读。</p>
+<p><strong><b>分析：</b></strong></p>
+<p><strong><b>所有者（第1位）：全部权限 =</b></strong><strong><b> </b></strong><strong><b>读 </b></strong><strong><b>+ </b></strong><strong><b>写 </b></strong><strong><b>+ </b></strong><strong><b>执行 =</b></strong><strong><b> 4 + 2 + 1 </b></strong><strong><b>=</b></strong><strong><b> 7</b></strong></p>
+<p><strong><b>同组用户（第2位）：读执行 =</b></strong><strong><b> </b></strong><strong><b>读 </b></strong><strong><b>+ </b></strong><strong><b>执行 =</b></strong><strong><b> 4 + 1 </b></strong><strong><b>=</b></strong><strong><b> 5</b></strong></p>
+<p><strong><b>其他用户（第3位）：读 =</b></strong><strong><b> 4</b></strong></p>
+<p><strong><b> </b></strong></p>
+<p><strong><b>组合： </b></strong><strong><b>754</b></strong></p>
+<p>&nbsp;</p>
+<p>最终得出的结果是754</p>
+<p>#chmod 754 anaconda-ks.cfg</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong><b>面试题：用超级管理员设置文档的权限命令是#chmod</b></strong><strong><b> </b></strong><strong><b>-</b></strong><strong><b>R </b></strong><strong><b>731</b></strong><strong><b> </b></strong><strong><b>aaa，请问这个命令有没有什么不合理的地方？</b></strong></p>
+<p>所有者 = 7 = 4 + 2 + 1 = 读 + 写 + 执行</p>
+<p>同组用户 = 3 = 2 + 1 = 写 + 执行</p>
+<p>其他用户 = 1 = 执行</p>
+<p>问题在权限731中3表示写+执行权限，但是写又不必须需要能打开之后才可以写，因此必须需要具备读权限，因此权限不合理。以后建议各位在设置权限的时候不要设置这种“奇葩权限”。单独出现2、3的权限数字一般都是有问题的权限</p>
+<p><strong><b>注意：在写权限的时候千万不要设置类似于上面的这种“奇葩权限”。如果一个权限数字中但凡出现2与3的数字，则该权限有不合理的情况。</b></strong></p>
+<p>&nbsp;</p>
+<p>练习：</p>
+<p>①使用root用户设置文件夹/root/20180811的权限为：所有者全部权限，同组用户拥有读和执行权限，其他用户没有权限，请使用数字权限的形式设置，写出指令；750</p>
+<p>②请使用root用户写出设置文件/root/20180811.txt文件的权限，权限要求为：所有者拥有全部权限，同组用户要求可以读写，其他用户只读，要求使用数字形式；764</p>
+<p>③张三疯（root）收到某个MM的情书，请使用数字形式设置张三疯的Email情书权限（文件为/root/email.doc），权限要求只有所有者可以读写，除此之外任何人没有权限；600</p>
+<h3><strong><b>4.</b></strong><strong><b>3、注意事项</b></strong></h3>
+<p>使用root用户创建一个文件夹（/oo），权限默认，权限如下：</p>
+<p>&nbsp;</p>
+<p>需要在oo目录下创建文件（oo/xx.txt），需要给777权限：</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong><b>扩展：</b></strong></p>
+<p><strong><b>在Linux系统中，创建文档的权限有一个默认值，以当前的系统为例，其创建文件夹之后的默认权限是7</b></strong><strong><b>55</b></strong><strong><b>，创建文件之后的权限是6</b></strong><strong><b>44</b></strong><strong><b>。</b></strong></p>
+<p><strong><b>之所以会这样是受到了系统中umask（掩码）的值的影响，其是用于指定文档创建好之后的权限，umask默认为0</b></strong><strong><b>22</b></strong><strong><b>。</b></strong></p>
+<p><strong><b>计算方式：</b></strong></p>
+<p><strong><b>对于文件：文件的权限 =</b></strong><strong><b> 666 – </b></strong><strong><b>umask掩码</b></strong></p>
+<p><strong><b>对于文件夹：文件夹的权限 =</b></strong><strong><b> 777 - </b></strong><strong><b>umask掩码</b></strong></p>
+<p>切换到admin用户（不是文档所有者，也不是同组用户，属于other部分）：</p>
+<p>&nbsp;</p>
+<p>问题1：admin用户是否可以打开oo/xx.txt文件？</p>
+<p>问题2：admin用户是否可以编辑oo/xx.txt文件？</p>
+<p>问题3：admin用户是否可以删除oo/xx.txt文件？</p>
+<p>&nbsp;</p>
+<p><strong><b>在Linux中，如果要删除一个文件，不是看文件有没有对应的权限，</b></strong><strong><b>而是看文件所在的目录是否有写权限，如果有才可以删除</b></strong>。</p>
+<h2><strong><b>5、属主与属组</b></strong></h2>
+<p>属主：所属的用户（文件的主人），文档所有者</p>
+<p>属组：所属的用户组（同组用户的组名称）</p>
+<p>&nbsp;</p>
+<p><strong><b>前面的那个root就是属主</b></strong></p>
+<p><strong><b>后面的那个root就是属组</b></strong></p>
+<p>&nbsp;</p>
+<p>这两项信息在文档创建的时候<strong><b>会使用创建者</b></strong>的信息（用户名、用户所属的主组名称）。</p>
+<p>&nbsp;</p>
+<p><strong><b>之所以需要设置这个：如果有时候去删除某个用户，则该用户对应的文档的属主和属组信息就需要去修改（类似离职之前的工作交接）。</b></strong></p>
+<h3><strong><b>5.</b></strong><strong><b>1、chown（</b></strong><strong><b>重点</b></strong><strong><b>）</b></strong></h3>
+<p><strong><b>作用：更改文档的所属用户（change</b></strong><strong><b> </b></strong><strong><b>owner）</b></strong></p>
+<p><strong><b>语法：#chown</b></strong><strong><b>  [</b></strong><strong><b>-</b></strong><strong><b>R]  </b></strong><strong><b>新的username</b></strong><strong><b> </b></strong><strong><b>文档路径</b></strong></p>
+<p><strong><b> </b></strong></p>
+<p>&nbsp;</p>
+<p><strong><b>注意：修改所有者的人必须是root或者所有者自己，其他人无权修改所有者。</b></strong></p>
+<p>&nbsp;</p>
+<p>案例：将先前设置的/oo目录的所有者设置成成admin</p>
+<p>#chown -R admin /oo</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3><strong><b>5.</b></strong><strong><b>2、chgrp（了解）</b></strong></h3>
+<p><strong><b>作用：更改文档的所属用户组（change</b></strong><strong><b> </b></strong><strong><b>group）</b></strong></p>
+<p>语法：#chgrp  [-R]  groupname  文档的路径</p>
+<p>案例：将刚才oo目录的所有用户组名改为admin</p>
+<p>#chgrp -R admin /oo</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong><b>思考，如何通过一个命令实现既可以更改所属的用户，也可以修改所属的用户组呢？</b></strong></p>
+<p>答：可以实现的，通过chown命令</p>
+<p><strong><b>语法：#chown</b></strong><strong><b>  [</b></strong><strong><b>-</b></strong><strong><b>R]  username</b></strong><strong><b>:groupname</b></strong><strong><b>   </b></strong><strong><b>文档路径</b></strong></p>
+<p>&nbsp;</p>
+<p>案例：将刚才oo的文档的所属组所属用户修改为root</p>
+<p>#chown -R root:root /oo</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong><b>问题：zhangsan用户使用自己的帐号创建文件index</b></strong><strong><b>.</b></strong><strong><b>html，并且当时默认的权限是6</b></strong><strong><b>44</b></strong><strong><b>，后续管理员root将该文件的属主改成了lisi，属组改成lisi，则zhangsan对文件的操作权限有变化吗？如果有权限是多少？</b></strong></p>
+<p>&nbsp;</p>
+<h2><strong><b>6、sudo（重点）</b></strong></h2>
+<p>问题：reboot、shutdown、init、halt，在普通用户身份上都是操作不了，但是有些特殊的情况下又需要有执行权限。又不可能让root用户把自己的密码告诉普通用户，这个问题该怎么解决？</p>
+<p>&nbsp;</p>
+<p><strong><b>该问题是可以被解决的，可以使用</b></strong><strong><b>sudo</b></strong><strong><b>（switch</b></strong><strong><b> </b></strong><strong><b>user</b></strong><strong><b> </b></strong><strong><b>do）命令来进行权限设置。</b></strong><strong><b>S</b></strong><strong><b>udo可以让管理员（root）事先定义某些特殊命令谁可以执行</b></strong>。</p>
+<p>&nbsp;</p>
+<p>默认sudo中是没有除root之外用户的规则，要想使用则先<strong><b>配置</b></strong>sudo。</p>
+<p>&nbsp;</p>
+<p><strong><b>S</b></strong><strong><b>udo配置文件：/etc</b></strong><strong><b>/</b></strong><strong><b>sudoers</b></strong></p>
+<p>该文件默认只读，不允许修改，因此不能直接修改。</p>
+<p>&nbsp;</p>
+<ol>
+<li>a. 配置sudo文件请使用“#visudo”，打开之后其使用方法和vim一致</li>
+</ol>
+<p>&nbsp;</p>
+<ol>
+<li><strong><b>b</b></strong><strong><b>. </b></strong><strong><b>配置普通用户的权限</b></strong></li>
+</ol>
+<p>&nbsp;</p>
+<p>Root表示用户名，如果是用户组，则可以写成“%组名”</p>
+<p>ALL：表示允许登录的主机（地址白名单）</p>
+<p>(ALL)：表示以谁的身份执行，ALL表示root身份</p>
+<p>ALL：表示当前用户可以执行的命令，多个命令可以使用“,”分割</p>
+<p>&nbsp;</p>
+<p><strong><b>案例：使用admin这个用户，赋予其添加用户权限。</b></strong></p>
+<p><strong><b>注意：在写sudo规则的时候不建议写直接形式的命令，而是</b></strong><strong><b>写命令的完整路径</b></strong><strong><b>。</b></strong></p>
+<p><strong><b>路径可以使用which（whereis亦可）命令来查看 </b></strong></p>
+<p><strong><b>语法：#which</b></strong><strong><b> </b></strong><strong><b>指令名称</b></strong></p>
+<p><strong><b> </b></strong></p>
+<p><strong><b>W</b></strong><strong><b>hereis会找出一些非可执行文件，建议使用which</b></strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>在添加好对应的规则之后就可以切换用户，切换到普通用户admin，再去执行：</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>此时要想使用刚才的规则，则以以下命令进行：</p>
+<p><strong><b>#sudo</b></strong><strong><b> </b></strong><strong><b>需要执行的指令（就是放权的指令名称）</b></strong></p>
+<p>&nbsp;</p>
+<p>此时输入的密码是当前执行sudo指令的用户的密码，而非root密码。</p>
+<p>&nbsp;</p>
+<p><strong><b>在输入sudo指令之后需要输入当前的用户密码进行确认的操作（不是root用户密码），输入之后在接下来5分钟内再次执行sudo指令不需要密码</b></strong>。</p>
+<p>&nbsp;</p>
+<p>补充：在普通用户下怎么查看自己具有哪些特殊权限呢？</p>
+<p><strong><b>#sudo</b></strong><strong><b>  </b></strong><strong><b>-l</b></strong> <strong><b>表示list</b></strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>最后：sudo不是任何Linux分支都有的命令，常见centos与ubuntu都存在sudo命令。</p>
+<p>&nbsp;</p>
+<p>作业：使用sudu实现让普通用户具备添加、删除用户的权限。</p>
+				<!--<div class="oshimai"></div>-->
+		<!--<h2 style="opacity:0;max-height:0;margin:0">Comments</h2>--><!-- 评论跳转标记 -->
+	</div><!-- .entry-content -->
+	  <div class="single-reward">
+    <div class="reward-open">赏
+      <div class="reward-main">
+        <ul class="reward-row">
+          <li class="alipay-code"><img src="../../../../../wp-content/uploads/2020/02/@W30PCJ387UEZKYC7LHK1.png"></li><li class="wechat-code"><img src="../../../../../wp-content/uploads/2020/02/J2SF@6XGFJ_MKB1IP5ZID.png"></li>        </ul>
+      </div>
+    </div>
+  </div>
+  	<footer class="post-footer">
+	<div class="post-lincenses"><a href="javascript:;" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+	<div class="post-tags">
+			</div>
+    
+<div class="post-like">
+<a href="javascript:;" data-action="ding" data-id="281" class="specsZan ">
+	<i class="iconfont icon-like"></i> <span class="count">
+		0</span>
+	</a>
+</div>
+		
+<div class="post-share">
+	<div class="social-share sharehidden"></div>
+	<i class="iconfont show-share icon-forward"></i>
+</div>
+	</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+<div class="toc-container"><div class="toc"></div></div>
+<section class="post-squares nextprev">
+	<div class="post-nepre half previous">
+		<a href="../../21/linux-用户组/index.html" rel="prev"><div class="background lazyload" style="background-image:url(../../../../../gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg);" data-src="https://yuzhenfu.cn/index.php/wp-json/sakura/v1/image/feature?180"></div><span class="label">Previous Post</span><div class="info"><h3>Linux 用户组</h3><hr></div></a>	</div>
+	<div class="post-nepre half next">
+		<a href="../../23/linux-网络/index.html" rel="next"><div class="background lazyload" style="background-image:url(../../../../../gh/moezx/cdn@3.0.1/img/svg/loader/orange.progress-bar-stripe-loade.svg);" data-src="https://yuzhenfu.cn/index.php/wp-json/sakura/v1/image/feature?719"></div><span class="label">Next Post</span><div class="info"><h3>Linux   网络</h3><hr></div></a>	</div>
+</section>
+	<section class="author-profile">
+		<div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+			<a href="../../../../author/recruited/index.html" class="profile gravatar"><img src="../../../../../wp-content/uploads/2020/02/OST9SHLQ95MTTBNV.png" itemprop="image" alt="Recruited" height="70" width="70"></a>
+			<div class="meta">
+				<span class="title">Author</span>	
+				<h3 itemprop="name">
+					<a href="../../../../author/recruited/index.html" itemprop="url" rel="author">Recruited</a>
+				</h3>						
+			</div>
+		</div>
+		<hr>
+		<p><i class="iconfont icon-write"></i>武汉加油，中国加油。</p>
+	</section>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+	
+	
+	<section id="comments" class="comments">
+
+		<div class="commentwrap comments-hidden">
+			<div class="notification"><i class="iconfont icon-mark"></i>查看评论 -
+			<span class="noticom">NOTHING </span>
+			</div>
+		</div>
+
+		<div class="comments-main">
+		 <h3 id="comments-list-title">Comments | <span class="noticom">NOTHING </span></h3> 
+		<div id="loading-comments"><span></span></div>
+			
+									<div class="commentwrap">
+						<div class="notification-hidden"><i class="iconfont icon-mark"></i> 暂无评论</div>
+					
+					</div>
+				
+			
+				<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="#respond" style="display:none;">取消回复</a></small></h3>			<form action="https://yuzhenfu.cn/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<p style="font-style:italic"><a href="javascript:;" target="_blank"><i class="iconfont icon-markdown" style="color:#000"></i></a> Markdown Supported while <i class="fa fa-code" aria-hidden="true"></i> Forbidden</p><div class="comment-textarea"><textarea placeholder="你是我一生只会遇见一次的惊喜 ..." name="comment" class="commentbody" id="comment" rows="5" tabindex="4"></textarea><label class="input-label">你是我一生只会遇见一次的惊喜 ...</label></div>
+                        <div id="upload-img-show"></div>
+                        <!--插入表情面版-->
+                        <p id="emotion-toggle" class="no-select">
+                            <span class="emotion-toggle-off">戳我试试 OωO</span>
+                            <span class="emotion-toggle-on">嘿嘿嘿 ヾ(≧∇≦*)ゝ</span>
+                        </p>
+                        <div class="emotion-box no-select">
+                            <table class="motion-switcher-table">
+                                <tr>
+                                    <th onclick="motionSwitch('.bili')" class="bili-bar on-hover">bilibili~</th>
+                                    <th onclick="motionSwitch('.menhera')" class="menhera-bar">(=・ω・=)</th>
+                                    <th onclick="motionSwitch('.tieba')" class="tieba-bar">Tieba</th>
+                                </tr>
+                            </table>
+                            <div class="bili-container motion-container"><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('baiyan',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_baiyan.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/baiyan.png);
+        animation-duration: 1800ms;
+        animation-timing-function: steps(45);
+        transform: translateY(-1408px);
+        height: 1440px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('fadai',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_fadai.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/fadai.png);
+        animation-duration: 1080ms;
+        animation-timing-function: steps(27);
+        transform: translateY(-832px);
+        height: 864px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('koubi',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_koubi.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/koubi.png);
+        animation-duration: 1200ms;
+        animation-timing-function: steps(30);
+        transform: translateY(-928px);
+        height: 960px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('qinqin',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_qinqin.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/qinqin.png);
+        animation-duration: 280ms;
+        animation-timing-function: steps(7);
+        transform: translateY(-192px);
+        height: 224px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('weiqu',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_weiqu.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/weiqu.png);
+        animation-duration: 800ms;
+        animation-timing-function: steps(20);
+        transform: translateY(-608px);
+        height: 640px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('bishi',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_bishi.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/bishi.png);
+        animation-duration: 360ms;
+        animation-timing-function: steps(9);
+        transform: translateY(-256px);
+        height: 288px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('fanu',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_fanu.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/fanu.png);
+        animation-duration: 1320ms;
+        animation-timing-function: steps(33);
+        transform: translateY(-1024px);
+        height: 1056px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('kun',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_kun.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/kun.png);
+        animation-duration: 1760ms;
+        animation-timing-function: steps(44);
+        transform: translateY(-1376px);
+        height: 1408px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('se',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_se.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/se.png);
+        animation-duration: 400ms;
+        animation-timing-function: steps(10);
+        transform: translateY(-288px);
+        height: 320px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('weixiao',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_weixiao.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/weixiao.png);
+        animation-duration: 800ms;
+        animation-timing-function: steps(20);
+        transform: translateY(-608px);
+        height: 640px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('bizui',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_bizui.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/bizui.png);
+        animation-duration: 1240ms;
+        animation-timing-function: steps(31);
+        transform: translateY(-960px);
+        height: 992px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('ganga',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_ganga.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/ganga.png);
+        animation-duration: 1520ms;
+        animation-timing-function: steps(38);
+        transform: translateY(-1184px);
+        height: 1216px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('lengmo',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_lengmo.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/lengmo.png);
+        animation-duration: 40ms;
+        animation-timing-function: steps(1);
+        transform: translateY(-0px);
+        height: 32px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('shengbing',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_shengbing.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/shengbing.png);
+        animation-duration: 1400ms;
+        animation-timing-function: steps(35);
+        transform: translateY(-1088px);
+        height: 1120px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('wunai',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_wunai.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/wunai.png);
+        animation-duration: 920ms;
+        animation-timing-function: steps(23);
+        transform: translateY(-704px);
+        height: 736px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('chan',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_chan.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/chan.png);
+        animation-duration: 1600ms;
+        animation-timing-function: steps(40);
+        transform: translateY(-1248px);
+        height: 1280px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('guilian',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_guilian.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/guilian.png);
+        animation-duration: 40ms;
+        animation-timing-function: steps(1);
+        transform: translateY(-0px);
+        height: 32px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('liubixue',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_liubixue.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/liubixue.png);
+        animation-duration: 1400ms;
+        animation-timing-function: steps(35);
+        transform: translateY(-1088px);
+        height: 1120px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('shengqi',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_shengqi.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/shengqi.png);
+        animation-duration: 440ms;
+        animation-timing-function: steps(11);
+        transform: translateY(-320px);
+        height: 352px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('xiaoku',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_xiaoku.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/xiaoku.png);
+        animation-duration: 600ms;
+        animation-timing-function: steps(15);
+        transform: translateY(-448px);
+        height: 480px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('daku',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_daku.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/daku.png);
+        animation-duration: 320ms;
+        animation-timing-function: steps(8);
+        transform: translateY(-224px);
+        height: 256px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('guzhang',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_guzhang.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/guzhang.png);
+        animation-duration: 680ms;
+        animation-timing-function: steps(17);
+        transform: translateY(-512px);
+        height: 544px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('liuhan',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_liuhan.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/liuhan.png);
+        animation-duration: 1080ms;
+        animation-timing-function: steps(27);
+        transform: translateY(-832px);
+        height: 864px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('shuizhao',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_shuizhao.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/shuizhao.png);
+        animation-duration: 960ms;
+        animation-timing-function: steps(24);
+        transform: translateY(-736px);
+        height: 768px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('xieyanxiao',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_xieyanxiao.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/xieyanxiao.png);
+        animation-duration: 320ms;
+        animation-timing-function: steps(8);
+        transform: translateY(-224px);
+        height: 256px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('dalao',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_dalao.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/dalao.png);
+        animation-duration: 1320ms;
+        animation-timing-function: steps(33);
+        transform: translateY(-1024px);
+        height: 1056px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('haixiu',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_haixiu.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/haixiu.png);
+        animation-duration: 1240ms;
+        animation-timing-function: steps(31);
+        transform: translateY(-960px);
+        height: 992px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('liulei',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_liulei.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/liulei.png);
+        animation-duration: 40ms;
+        animation-timing-function: steps(1);
+        transform: translateY(-0px);
+        height: 32px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('sikao',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_sikao.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/sikao.png);
+        animation-duration: 1440ms;
+        animation-timing-function: steps(36);
+        transform: translateY(-1120px);
+        height: 1152px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('yiwen',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_yiwen.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/yiwen.png);
+        animation-duration: 840ms;
+        animation-timing-function: steps(21);
+        transform: translateY(-640px);
+        height: 672px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('dalian',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_dalian.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/dalian.png);
+        animation-duration: 1480ms;
+        animation-timing-function: steps(37);
+        transform: translateY(-1152px);
+        height: 1184px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('heirenwenhao',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_heirenwenhao.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/heirenwenhao.png);
+        animation-duration: 1040ms;
+        animation-timing-function: steps(26);
+        transform: translateY(-800px);
+        height: 832px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('miantian',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_miantian.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/miantian.png);
+        animation-duration: 1120ms;
+        animation-timing-function: steps(28);
+        transform: translateY(-864px);
+        height: 896px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('tiaokan',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_tiaokan.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/tiaokan.png);
+        animation-duration: 40ms;
+        animation-timing-function: steps(1);
+        transform: translateY(-0px);
+        height: 32px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('yun',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_yun.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/yun.png);
+        animation-duration: 480ms;
+        animation-timing-function: steps(12);
+        transform: translateY(-352px);
+        height: 384px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('dianzan',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_dianzan.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/dianzan.png);
+        animation-duration: 800ms;
+        animation-timing-function: steps(20);
+        transform: translateY(-608px);
+        height: 640px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('huaixiao',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_huaixiao.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/huaixiao.png);
+        animation-duration: 1240ms;
+        animation-timing-function: steps(31);
+        transform: translateY(-960px);
+        height: 992px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('mudengkoudai',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_mudengkoudai.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/mudengkoudai.png);
+        animation-duration: 40ms;
+        animation-timing-function: steps(1);
+        transform: translateY(-0px);
+        height: 32px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('tiaopi',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_tiaopi.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/tiaopi.png);
+        animation-duration: 2000ms;
+        animation-timing-function: steps(50);
+        transform: translateY(-1568px);
+        height: 1600px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('zaijian',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_zaijian.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/zaijian.png);
+        animation-duration: 960ms;
+        animation-timing-function: steps(24);
+        transform: translateY(-736px);
+        height: 768px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('doge',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_doge.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/doge.png);
+        animation-duration: 800ms;
+        animation-timing-function: steps(20);
+        transform: translateY(-608px);
+        height: 640px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('jingxia',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_jingxia.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/jingxia.png);
+        animation-duration: 1280ms;
+        animation-timing-function: steps(32);
+        transform: translateY(-992px);
+        height: 1024px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('nanguo',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_nanguo.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/nanguo.png);
+        animation-duration: 1120ms;
+        animation-timing-function: steps(28);
+        transform: translateY(-864px);
+        height: 896px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('touxiao',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_touxiao.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/touxiao.png);
+        animation-duration: 240ms;
+        animation-timing-function: steps(6);
+        transform: translateY(-160px);
+        height: 192px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('zhoumei',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_zhoumei.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/zhoumei.png);
+        animation-duration: 40ms;
+        animation-timing-function: steps(1);
+        transform: translateY(-0px);
+        height: 32px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('facai',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_facai.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/facai.png);
+        animation-duration: 1200ms;
+        animation-timing-function: steps(30);
+        transform: translateY(-928px);
+        height: 960px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('keai',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_keai.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/keai.png);
+        animation-duration: 680ms;
+        animation-timing-function: steps(17);
+        transform: translateY(-512px);
+        height: 544px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('outu',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_outu.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/outu.png);
+        animation-duration: 1680ms;
+        animation-timing-function: steps(42);
+        transform: translateY(-1312px);
+        height: 1344px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('tuxue',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_tuxue.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/tuxue.png);
+        animation-duration: 320ms;
+        animation-timing-function: steps(8);
+        transform: translateY(-224px);
+        height: 256px;
+        "></div></span><span class="emotion-secter emotion-item emotion-select-parent" onclick="grin('zhuakuang',type = 'Math')" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/hd/ic_emoji_zhuakuang.png);"><div class="img emotion-select-child" style="background-image: url(../../../../../gh/moezx/cdn@2.9.4/img/bili/zhuakuang.png);
+        animation-duration: 760ms;
+        animation-timing-function: steps(19);
+        transform: translateY(-576px);
+        height: 608px;
+        "></div></span></div>
+                            <div class="menhera-container motion-container" style="display:none;">
+                                
+        <a class="emoji-item">(⌒▽⌒)</a>
+        <a class="emoji-item">（￣▽￣）</a>
+        <a class="emoji-item">(=・ω・=)</a>
+        <a class="emoji-item">(｀・ω・´)</a>
+        <a class="emoji-item">(〜￣△￣)〜</a>
+        <a class="emoji-item">(･∀･)</a>
+        <a class="emoji-item">(°∀°)ﾉ</a>
+        <a class="emoji-item">(￣3￣)</a>
+        <a class="emoji-item">╮(￣▽￣)╭</a>
+        <a class="emoji-item">(´_ゝ｀)</a>
+        <a class="emoji-item">←_←</a>
+        <a class="emoji-item">→_→</a>
+        <a class="emoji-item">(&lt;_&lt;)</a>
+        <a class="emoji-item">(&gt;_&gt;)</a>
+        <a class="emoji-item">(;¬_¬)</a>
+        <a class="emoji-item">("▔□▔)/</a>
+        <a class="emoji-item">(ﾟДﾟ≡ﾟдﾟ)!?</a>
+        <a class="emoji-item">Σ(ﾟдﾟ;)</a>
+        <a class="emoji-item">Σ(￣□￣||)</a>
+        <a class="emoji-item">(’；ω；‘)</a>
+        <a class="emoji-item">（/TДT)/</a>
+        <a class="emoji-item">(^・ω・^ )</a>
+        <a class="emoji-item">(｡･ω･｡)</a>
+        <a class="emoji-item">(●￣(ｴ)￣●)</a>
+        <a class="emoji-item">ε=ε=(ノ≧∇≦)ノ</a>
+        <a class="emoji-item">(’･_･‘)</a>
+        <a class="emoji-item">(-_-#)</a>
+        <a class="emoji-item">（￣へ￣）</a>
+        <a class="emoji-item">(￣ε(#￣)Σ</a>
+        <a class="emoji-item">ヽ(‘Д’)ﾉ</a>
+        <a class="emoji-item">（#-_-)┯━┯</a>
+        <a class="emoji-item">(╯°口°)╯(┴—┴</a>
+        <a class="emoji-item">←◡←</a>
+        <a class="emoji-item">( ♥д♥)</a>
+        <a class="emoji-item">_(:3」∠)_</a>
+        <a class="emoji-item">Σ&gt;―(〃°ω°〃)♡→</a>
+        <a class="emoji-item">⁄(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄</a>
+        <a class="emoji-item">(╬ﾟдﾟ)▄︻┻┳═一</a>
+        <a class="emoji-item">･*･:≡(　ε:)</a>
+        <a class="emoji-item">(笑)</a>
+        <a class="emoji-item">(汗)</a>
+        <a class="emoji-item">(泣)</a>
+        <a class="emoji-item">(苦笑)</a>
+    
+                            </div>
+                            <div class="tieba-container motion-container" style="display:none;"><span title="tongue" onclick="grin('tongue')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_tongue.gif"></span><span title="theblackline" onclick="grin('theblackline')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_theblackline.gif"></span><span title="tear" onclick="grin('tear')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_tear.gif"></span><span title="surprised" onclick="grin('surprised')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_surprised.gif"></span><span title="surprised2" onclick="grin('surprised2')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_surprised2.gif"></span><span title="spray" onclick="grin('spray')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_spray.gif"></span><span title="spit" onclick="grin('spit')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_spit.gif"></span><span title="smilingeyes" onclick="grin('smilingeyes')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_smilingeyes.gif"></span><span title="shui" onclick="grin('shui')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_shui.gif"></span><span title="shame" onclick="grin('shame')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_shame.gif"></span><span title="se" onclick="grin('se')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_se.gif"></span><span title="rmb" onclick="grin('rmb')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_rmb.gif"></span><span title="reluctantly" onclick="grin('reluctantly')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_reluctantly.gif"></span><span title="rbq" onclick="grin('rbq')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_rbq.gif"></span><span title="niconiconit" onclick="grin('niconiconit')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_niconiconit.gif"></span><span title="niconiconi" onclick="grin('niconiconi')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_niconiconi.gif"></span><span title="niconiconi-t" onclick="grin('niconiconi-t')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_niconiconit.gif"></span><span title="naive" onclick="grin('naive')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_naive.gif"></span><span title="ku" onclick="grin('ku')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_ku.gif"></span><span title="huaji" onclick="grin('huaji')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_huaji.gif"></span><span title="hu" onclick="grin('hu')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_hu.gif"></span><span title="han" onclick="grin('han')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_han.gif"></span><span title="haha" onclick="grin('haha')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_haha.gif"></span><span title="good" onclick="grin('good')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_good.gif"></span><span title="doubt" onclick="grin('doubt')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_doubt.gif"></span><span title="britan" onclick="grin('britan')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_britan.gif"></span><span title="bbd" onclick="grin('bbd')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_bbd.gif"></span><span title="awesome" onclick="grin('awesome')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_awesome.gif"></span><span title="anger" onclick="grin('anger')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_anger.gif"></span><span title="aa" onclick="grin('aa')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_aa.gif"></span><span title="Happy" onclick="grin('Happy')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_Happy.gif"></span><span title="Grievance" onclick="grin('Grievance')"><img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/smilies/icon_Grievance.gif"></span></div>
+                        </div>
+                        <!--表情面版完--><div class="cmt-info-container"><div class="comment-user-avatar"><img src="../../../../../avatar/f11f237b3de93c93b24045e71f7f65c6.jpg"><div class="socila-check qq-check"><i class="fa fa-qq" aria-hidden="true"></i></div><div class="socila-check gravatar-check"><i class="fa fa-google" aria-hidden="true"></i></div></div>
+<div class="popup cmt-popup cmt-author" onclick="cmt_showPopup(this)"><span class="popuptext" id="thePopup" style="margin-left: -115px;width: 230px;">输入QQ号将自动拉取昵称和头像</span><input type="text" placeholder="昵称或QQ号 (昵称 )" name="author" id="author" value="" size="22" autocomplete="off" tabindex="1" aria-required='true'></div>
+<div class="popup cmt-popup" onclick="cmt_showPopup(this)"><span class="popuptext" id="thePopup" style="margin-left: -65px;width: 130px;">你将收到回复通知</span><input type="text" placeholder="邮箱 (必须* )" name="email" id="email" value="" size="22" tabindex="1" autocomplete="off" aria-required='true'></div>
+<div class="popup cmt-popup" onclick="cmt_showPopup(this)"><span class="popuptext" id="thePopup" style="margin-left: -55px;width: 110px;">禁止小广告😀</span><input type="text" placeholder="网站" name="url" id="url" value="" size="22" autocomplete="off" tabindex="1"></div></div><label class="siren-checkbox-label"><input class="siren-checkbox-radio" type="checkbox" name="is-private"><span class="siren-is-private-checkbox siren-checkbox-radioInput"></span>悄悄话</label>
+<input type="text" placeholder="QQ" name="new_field_qq" id="qq" value="" style="display:none" autocomplete="off"><!--此栏不可见-->
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="BiuBiuBiu~"> <input type='hidden' name='comment_post_ID' value='281' id='comment_post_ID'>
+<input type='hidden' name='comment_parent' id='comment_parent' value='0'>
+</p>			</form>
+			</div><!-- #respond -->
+	
+		</div>
+
+
+	</section>
+	</div><!-- #page Pjax container-->
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info" theme-info="Sakura v3.3.6">
+			<div class="footertext">
+				<div class="img-preload">
+					<img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/wordpress-rotating-ball-o.svg">
+					<img src="../../../../../gh/moezx/cdn@3.1.9/img/Sakura/images/disqus-preloader.svg">
+				</div>
+				<p style="color: #666666;">Copyright &copy; by Yuzhenfu All Rights Reserved    |   鲁ICP备20004127号</p>
+			</div>
+			<div class="footer-device">
+			<p style="font-family: 'Ubuntu', sans-serif;">
+					<span style="color: #b9b9b9;">
+												Theme <a href="javascript:;" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="javascript:;" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>
+					</span>
+				</p>
+			</div>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+	<div class="openNav no-select">
+		<div class="iconflat no-select">	 
+			<div class="icon"></div>
+		</div>
+		<div class="site-branding">
+						<h1 class="site-title"><a href="../../../../../index1.html">Recruited</a></h1>
+					</div>
+	</div><!-- m-nav-bar -->
+	</section><!-- #section -->
+	<!-- m-nav-center -->
+	<div id="mo-nav">
+		<div class="m-avatar">
+						<img src="../../../../../wp-content/uploads/2020/02/OST9SHLQ95MTTBNV.png">
+		</div>
+		<div class="m-search">
+			<form class="m-search-form" method="get" action="https://yuzhenfu.cn" role="search">
+				<input class="m-search-input" type="search" name="s" placeholder="搜索..." required="">
+			</form>
+		</div>
+		<ul id="menu-%e9%a6%96%e9%a1%b5-1" class="menu"><li><a href="../../../../../index1.html">首页</a></li>
+<li><a href="../../../../时光轴/index.html">时光轴</a>
+<ul class="sub-menu">
+	<li><a href="../../../../归档/index.html">归档</a></li>
+</ul>
+</li>
+<li><a href="../../../02/20/考研成绩/index.html">考研成绩</a></li>
+<li><a href="../../../02/01/hello-world/index.html">世界，您好！</a></li>
+<li><a href="../../../../donate/index.html">赞赏</a></li>
+<li><a href="../../../../about/index.html">关于我</a></li>
+</ul>	</div><!-- m-nav-center end -->
+	<a class="cd-top faa-float animated "></a>
+	<button onclick="topFunction()" id="moblieGoTop" title="Go to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+	<!-- search start -->
+	<form class="js-search search-form search-form--modal" method="get" action="https://yuzhenfu.cn" role="search">
+		<div class="search-form__inner">
+					<div class="micro">
+				<i class="iconfont icon-search"></i>
+				<input id="search-input" class="text-input" type="search" name="s" placeholder="想要找点什么呢？" required="">
+			</div>
+			<div class="ins-section-wrapper">
+                <a id="Ty" href="#"></a>
+                <div class="ins-section-container" id="PostlistBox"></div>
+            </div>
+				</div>
+		<div class="search_close"></div>
+	</form>
+	<!-- search end -->
+<script type='text/javascript' src='../../../../../gh/mashirozx/Sakura@3.3.6/cdn/js/lib.min-3.3.6.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var Poi = {"pjax":"1","movies":"close","windowheight":"auto","codelamp":"close","ajaxurl":"https:\/\/yuzhenfu.cn\/wp-admin\/admin-ajax.php","order":"asc","formpostion":"bottom","reply_link_version":"old","api":"https:\/\/yuzhenfu.cn\/index.php\/wp-json\/","nonce":"92fe4e08c3"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='../../../../../gh/mashirozx/Sakura@3.3.6/js/sakura-app.min-3.3.6.js'></script>
+<script type='text/javascript' src='../../../../../github-cards/latest/widget-3.3.6.js'></script>
+<script type='text/javascript' src='../../../../../wp-includes/js/comment-reply.min-4.8.12.js'></script>
+<script type='text/javascript' src='../../../../../wp-includes/js/wp-embed.min-4.8.12.js'></script>
+<div class="changeSkin-gear no-select" style="bottom: -999px;">
+    <div class="keys">
+        <span id="open-skinMenu">
+		<i class="iconfont icon-gear inline-block rotating"></i>&nbsp; 切换主题 | SCHEME TOOL 
+        </span>
+    </div>
+</div>
+<div class="skin-menu no-select">
+    <div class="theme-controls row-container">
+        <ul class="menu-list">
+            <li id="white-bg">
+                <i class="fa fa-television" aria-hidden="true"></i>
+            </li><!--Default-->
+            <li id="sakura-bg">
+                <i class="iconfont icon-sakura"></i>
+            </li><!--Sakura-->
+            <li id="gribs-bg">
+                <i class="fa fa-slack" aria-hidden="true"></i>
+            </li><!--Grids-->
+            <li id="KAdots-bg">
+                <i class="iconfont icon-dots"></i>
+            </li><!--Dots-->
+            <li id="totem-bg">
+                <i class="fa fa-superpowers" aria-hidden="true"></i>
+            </li><!--Orange-->
+            <li id="pixiv-bg">
+                <i class="iconfont icon-pixiv"></i>
+            </li><!--Start-->
+            <li id="bing-bg">
+                <i class="iconfont icon-bing"></i>
+            </li><!--Bing-->
+            <li id="dark-bg">
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+            </li><!--Night-->
+        </ul>
+    </div>
+    <div class="font-family-controls row-container">
+        <button type="button" class="control-btn-serif selected" data-mode="serif" onclick="mashiro_global.font_control.change_font()">Serif</button>
+        <button type="button" class="control-btn-sans-serif" data-mode="sans-serif" onclick="mashiro_global.font_control.change_font()">Sans Serif</button>
+    </div>
+</div>
+<canvas id="night-mode-cover"></canvas>
+    <div id="aplayer-float" style="z-index: 100;" class="aplayer" data-id="3225684104" data-server="netease" data-type="playlist" data-fixed="true" data-theme="orange">
+    </div>
+</body>
+</html>
